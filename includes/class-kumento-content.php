@@ -122,6 +122,11 @@ class Kumento_Content {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-kumento-content-public.php';
 
+		/**
+		 * Custom Post Types
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-kumento-content-post_types.php';
+
 		$this->loader = new Kumento_Content_Loader();
 
 	}
@@ -157,6 +162,9 @@ class Kumento_Content {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$plugin_post_types = new Kumento_Content_Post_Types();
+		$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_news', 999 );
+		$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_news_taxnonomy', 999 );
 	}
 
 	/**
