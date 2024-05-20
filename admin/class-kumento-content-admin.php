@@ -52,6 +52,9 @@ class Kumento_Content_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		include_once( 'partials/' . $this->plugin_name . '-admin-settings.php' );
+		include_once( 'partials/' . $this->plugin_name . '-admin-fields-news.php' );
+
 	}
 
 	/**

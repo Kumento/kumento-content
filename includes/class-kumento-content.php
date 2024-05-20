@@ -163,8 +163,32 @@ class Kumento_Content {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		$plugin_post_types = new Kumento_Content_Post_Types();
-		$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_news', 999 );
-		$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_news_taxnonomy', 999 );
+		$kumentoOptions = get_option('kumento_content_options');
+
+		if($kumentoOptions['kumento_news_show']){
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_news', 999 );
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_news_taxnonomy', 999 );
+		}	
+
+		if($kumentoOptions['kumento_press_show']){
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_press', 999 );
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_press_taxnonomy', 999 );
+		}
+
+		if($kumentoOptions['kumento_event_show']){
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_event', 999 );
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_event_taxnonomy', 999 );
+		}
+
+		if($kumentoOptions['kumento_company_show']){
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_company', 999 );
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_company_taxnonomy', 999 );
+		}
+
+		if($kumentoOptions['kumento_association_show']){
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_association', 999 );
+			$this->loader->add_action( 'init', $plugin_post_types, 'register_kumento_association_taxnonomy', 999 );
+		}
 	}
 
 	/**
