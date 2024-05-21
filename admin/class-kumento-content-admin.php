@@ -54,6 +54,9 @@ class Kumento_Content_Admin {
 
 		include_once( 'partials/' . $this->plugin_name . '-admin-settings.php' );
 		include_once( 'partials/' . $this->plugin_name . '-admin-fields-news.php' );
+		include_once( 'partials/' . $this->plugin_name . '-admin-fields-company.php' );
+		include_once( 'partials/' . $this->plugin_name . '-admin-fields-asso.php' );
+		include_once( 'partials/' . $this->plugin_name . '-admin-fields-event.php' );
 
 	}
 

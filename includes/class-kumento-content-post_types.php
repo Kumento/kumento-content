@@ -51,23 +51,22 @@ class Kumento_Content_Post_Types {
 		);
 
 		$args = array( 
-			'public'      => false, 
-			'labels'      => $labels,
-			'has_archive' => false,
-			'description' => __( 'Kumento News', 'kumento_content' ),
-			'show_ui'	        => true,
-			'show_in_admin_bar' => true,
-			'menu_position' => 25,
-			'menu_icon' => 'dashicons-rest-api',
-			'taxonomies' => array( 'kumento_news_category' ),
-			'query_var'          => true,
-    		'rewrite'            => array( 'slug' => 'kumento_news' ),
-			'exclude_from_search' => true,
-			'supports' => array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
+			'public'      			=> false, 
+			'labels'      			=> $labels,
+			'has_archive' 			=> false,
+			'description' 			=> __( 'Kumento News', 'kumento_content' ),
+			'public'	        	=> true,
+			'show_in_admin_bar' 	=> true,
+			'menu_position' 		=> 5,
+			'menu_icon' 			=> 'dashicons-rest-api',
+			'taxonomies' 			=> array( 'kumento_news_category' ),
+			'query_var'          	=> true,
+    		'rewrite'            	=> array( 'slug' => 'k_news' ),
+			'supports' 				=> array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
 			// as pointed out by iEmanuele, adding map_meta_cap will map the meta correctly 
-			'map_meta_cap' => true,
-			'show_in_rest' => true,
-			'rest_base'          => 'kumento_news_post',
+			'map_meta_cap' 			=> true,
+			'show_in_rest' 			=> true,
+			'rest_base'          	=> 'kumento_news_post',
     		'rest_controller_class' => 'WP_REST_Posts_Controller'
 		);
     	register_post_type( 'kumento_news_post', $args );
@@ -76,9 +75,9 @@ class Kumento_Content_Post_Types {
 	public function register_kumento_news_taxnonomy() {
 		
 		$labels = array(
-			'name'                       => __( 'Categories', 'kumento_content' ),
-			'singular_name'              => __( 'Categories', 'kumento_content' ),
-			'menu_name'                  => __( 'Categories', 'kumento_content' ),
+			'name'                       => __( 'News Categories', 'kumento_content' ),
+			'singular_name'              => __( 'News Categories', 'kumento_content' ),
+			'menu_name'                  => __( 'News Categories', 'kumento_content' ),
 			'all_items'                  => __( 'All Categories', 'kumento_content' ),
 			'parent_item'                => __( 'Parent Category', 'kumento_content' ),
 			'parent_item_colon'          => __( 'Parent Category:', 'kumento_content' ),
@@ -105,8 +104,9 @@ class Kumento_Content_Post_Types {
 			'show_admin_column'         => true,
 			'show_in_nav_menus'         => true,
 			'show_in_rest'             	=> true,
-			'rest_base'             => 'kumento_news_category',
-    		'rest_controller_class' => 'WP_REST_Terms_Controller'
+			'rewrite'            		=> array( 'slug' => 'k_news_cat' ),
+			'rest_base'             	=> 'kumento_news_category',
+    		'rest_controller_class' 	=> 'WP_REST_Terms_Controller'
 		  );
 		  register_taxonomy( 'kumento_news_category', array( 'kumento_news_post' ), $args );
 
@@ -135,23 +135,22 @@ class Kumento_Content_Post_Types {
 		);
 
 		$args = array( 
-			'public'      => false, 
-			'labels'      => $labels,
-			'has_archive' => false,
-			'description' => __( 'Kumento Press', 'kumento_content' ),
-			'show_ui'	        => true,
-			'show_in_admin_bar' => true,
-			'menu_position' => 25,
-			'menu_icon' => 'dashicons-rest-api',
-			'taxonomies' => array( 'kumento_press_category' ),
-			'query_var'          => true,
-    		'rewrite'            => array( 'slug' => 'kumento_press' ),
-			'exclude_from_search' => true,
-			'supports' => array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
+			'public'      			=> false, 
+			'labels'      			=> $labels,
+			'has_archive' 			=> false,
+			'description' 			=> __( 'Kumento Press', 'kumento_content' ),
+			'public'	        	=> true,
+			'show_in_admin_bar' 	=> true,
+			'menu_position' 		=> 5,
+			'menu_icon' 			=> 'dashicons-rest-api',
+			'taxonomies' 			=> array( 'kumento_press_category' ),
+			'query_var'          	=> true,
+    		'rewrite'            	=> array( 'slug' => 'k_press' ),
+			'supports' 				=> array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
 			// as pointed out by iEmanuele, adding map_meta_cap will map the meta correctly 
-			'map_meta_cap' => true,
-			'show_in_rest' => true,
-			'rest_base'          => 'kumento_press_post',
+			'map_meta_cap' 			=> true,
+			'show_in_rest' 			=> true,
+			'rest_base'          	=> 'kumento_press_post',
     		'rest_controller_class' => 'WP_REST_Posts_Controller'
 		);
     	register_post_type( 'kumento_press_post', $args );
@@ -160,9 +159,9 @@ class Kumento_Content_Post_Types {
 	public function register_kumento_press_taxnonomy() {
 		
 		$labels = array(
-			'name'                       => __( 'Categories', 'kumento_content' ),
-			'singular_name'              => __( 'Categories', 'kumento_content' ),
-			'menu_name'                  => __( 'Categories', 'kumento_content' ),
+			'name'                       => __( 'Press Categories', 'kumento_content' ),
+			'singular_name'              => __( 'Press Categories', 'kumento_content' ),
+			'menu_name'                  => __( 'Press Categories', 'kumento_content' ),
 			'all_items'                  => __( 'All Categories', 'kumento_content' ),
 			'parent_item'                => __( 'Parent Category', 'kumento_content' ),
 			'parent_item_colon'          => __( 'Parent Category:', 'kumento_content' ),
@@ -189,8 +188,9 @@ class Kumento_Content_Post_Types {
 			'show_admin_column'         => true,
 			'show_in_nav_menus'         => true,
 			'show_in_rest'             	=> true,
-			'rest_base'             => 'kumento_press_category',
-    		'rest_controller_class' => 'WP_REST_Terms_Controller'
+			'rewrite'            		=> array( 'slug' => 'k_press_cat' ),
+			'rest_base'             	=> 'kumento_press_category',
+    		'rest_controller_class' 	=> 'WP_REST_Terms_Controller'
 		  );
 		  register_taxonomy( 'kumento_press_category', array( 'kumento_press_post' ), $args );
 
@@ -219,23 +219,22 @@ class Kumento_Content_Post_Types {
 		);
 
 		$args = array( 
-			'public'      => false, 
-			'labels'      => $labels,
-			'has_archive' => false,
-			'description' => __( 'Kumento Event', 'kumento_content' ),
-			'show_ui'	        => true,
-			'show_in_admin_bar' => true,
-			'menu_position' => 25,
-			'menu_icon' => 'dashicons-rest-api',
-			'taxonomies' => array( 'kumento_event_category' ),
-			'query_var'          => true,
-    		'rewrite'            => array( 'slug' => 'kumento_event' ),
-			'exclude_from_search' => true,
-			'supports' => array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
+			'public'      			=> false, 
+			'labels'      			=> $labels,
+			'has_archive' 			=> false,
+			'description' 			=> __( 'Kumento Event', 'kumento_content' ),
+			'public'	        	=> true,
+			'show_in_admin_bar' 	=> true,
+			'menu_position' 		=> 5,
+			'menu_icon' 			=> 'dashicons-rest-api',
+			'taxonomies' 			=> array( 'kumento_event_category' ),
+			'query_var'          	=> true,
+    		'rewrite'            	=> array( 'slug' => 'k_event' ),
+			'supports' 				=> array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
 			// as pointed out by iEmanuele, adding map_meta_cap will map the meta correctly 
-			'map_meta_cap' => true,
-			'show_in_rest' => true,
-			'rest_base'          => 'kumento_event_post',
+			'map_meta_cap' 			=> true,
+			'show_in_rest' 			=> true,
+			'rest_base'          	=> 'kumento_event_post',
     		'rest_controller_class' => 'WP_REST_Posts_Controller'
 		);
     	register_post_type( 'kumento_event_post', $args );
@@ -244,9 +243,9 @@ class Kumento_Content_Post_Types {
 	public function register_kumento_event_taxnonomy() {
 		
 		$labels = array(
-			'name'                       => __( 'Categories', 'kumento_content' ),
-			'singular_name'              => __( 'Categories', 'kumento_content' ),
-			'menu_name'                  => __( 'Categories', 'kumento_content' ),
+			'name'                       => __( 'Event Categories', 'kumento_content' ),
+			'singular_name'              => __( 'Event Categories', 'kumento_content' ),
+			'menu_name'                  => __( 'Event Categories', 'kumento_content' ),
 			'all_items'                  => __( 'All Categories', 'kumento_content' ),
 			'parent_item'                => __( 'Parent Category', 'kumento_content' ),
 			'parent_item_colon'          => __( 'Parent Category:', 'kumento_content' ),
@@ -273,8 +272,9 @@ class Kumento_Content_Post_Types {
 			'show_admin_column'         => true,
 			'show_in_nav_menus'         => true,
 			'show_in_rest'             	=> true,
-			'rest_base'             => 'kumento_event_category',
-    		'rest_controller_class' => 'WP_REST_Terms_Controller'
+			'rewrite'            		=> array( 'slug' => 'k_event_cat' ),
+			'rest_base'             	=> 'kumento_event_category',
+    		'rest_controller_class' 	=> 'WP_REST_Terms_Controller'
 		  );
 		  register_taxonomy( 'kumento_event_category', array( 'kumento_event_post' ), $args );
 
@@ -303,23 +303,22 @@ class Kumento_Content_Post_Types {
 		);
 
 		$args = array( 
-			'public'      => false, 
-			'labels'      => $labels,
-			'has_archive' => false,
-			'description' => __( 'Kumento Company', 'kumento_content' ),
-			'show_ui'	        => true,
-			'show_in_admin_bar' => true,
-			'menu_position' => 25,
-			'menu_icon' => 'dashicons-rest-api',
-			'taxonomies' => array( 'kumento_company_category' ),
-			'query_var'          => true,
-    		'rewrite'            => array( 'slug' => 'kumento_company' ),
-			'exclude_from_search' => true,
-			'supports' => array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
+			'public'      			=> false, 
+			'labels'      			=> $labels,
+			'has_archive' 			=> false,
+			'description' 			=> __( 'Kumento Company', 'kumento_content' ),
+			'public'	        	=> true,
+			'show_in_admin_bar' 	=> true,
+			'menu_position' 		=> 5,
+			'menu_icon' 			=> 'dashicons-rest-api',
+			'taxonomies' 			=> array( 'kumento_company_category' ),
+			'query_var'          	=> true,
+    		'rewrite'            	=> array( 'slug' => 'k_company' ),
+			'supports' 				=> array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
 			// as pointed out by iEmanuele, adding map_meta_cap will map the meta correctly 
-			'map_meta_cap' => true,
-			'show_in_rest' => true,
-			'rest_base'          => 'kumento_company_post',
+			'map_meta_cap' 			=> true,
+			'show_in_rest' 			=> true,
+			'rest_base'          	=> 'kumento_company_post',
     		'rest_controller_class' => 'WP_REST_Posts_Controller'
 		);
     	register_post_type( 'kumento_company_post', $args );
@@ -328,9 +327,9 @@ class Kumento_Content_Post_Types {
 	public function register_kumento_company_taxnonomy() {
 		
 		$labels = array(
-			'name'                       => __( 'Categories', 'kumento_content' ),
-			'singular_name'              => __( 'Categories', 'kumento_content' ),
-			'menu_name'                  => __( 'Categories', 'kumento_content' ),
+			'name'                       => __( 'Company Categories', 'kumento_content' ),
+			'singular_name'              => __( 'Company Categories', 'kumento_content' ),
+			'menu_name'                  => __( 'Company Categories', 'kumento_content' ),
 			'all_items'                  => __( 'All Categories', 'kumento_content' ),
 			'parent_item'                => __( 'Parent Category', 'kumento_content' ),
 			'parent_item_colon'          => __( 'Parent Category:', 'kumento_content' ),
@@ -357,8 +356,9 @@ class Kumento_Content_Post_Types {
 			'show_admin_column'         => true,
 			'show_in_nav_menus'         => true,
 			'show_in_rest'             	=> true,
-			'rest_base'             => 'kumento_company_category',
-    		'rest_controller_class' => 'WP_REST_Terms_Controller'
+			'rewrite'            		=> array( 'slug' => 'k_company_cat' ),
+			'rest_base'             	=> 'kumento_company_category',
+    		'rest_controller_class' 	=> 'WP_REST_Terms_Controller'
 		  );
 		  register_taxonomy( 'kumento_company_category', array( 'kumento_company_post' ), $args );
 
@@ -387,23 +387,22 @@ class Kumento_Content_Post_Types {
 		);
 
 		$args = array( 
-			'public'      => false, 
-			'labels'      => $labels,
-			'has_archive' => false,
-			'description' => __( 'Kumento Association', 'kumento_content' ),
-			'show_ui'	        => true,
-			'show_in_admin_bar' => true,
-			'menu_position' => 25,
-			'menu_icon' => 'dashicons-rest-api',
-			'taxonomies' => array( 'kumento_asso_category' ),
-			'query_var'          => true,
-    		'rewrite'            => array( 'slug' => 'kumento_association' ),
-			'exclude_from_search' => true,
-			'supports' => array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
+			'public'      			=> false, 
+			'labels'      			=> $labels,
+			'has_archive' 			=> false,
+			'description' 			=> __( 'Kumento Association', 'kumento_content' ),
+			'public'	        	=> true,
+			'show_in_admin_bar' 	=> true,
+			'menu_position' 		=> 5,
+			'menu_icon' 			=> 'dashicons-rest-api',
+			'taxonomies' 			=> array( 'kumento_asso_category' ),
+			'query_var'          	=> true,
+    		'rewrite'            	=> array( 'slug' => 'k_asso' ),
+			'supports' 				=> array( 'title', 'editor', 'comments', 'revisions', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' ),
 			// as pointed out by iEmanuele, adding map_meta_cap will map the meta correctly 
-			'map_meta_cap' => true,
-			'show_in_rest' => true,
-			'rest_base'          => 'kumento_association_post',
+			'map_meta_cap' 			=> true,
+			'show_in_rest' 			=> true,
+			'rest_base'          	=> 'kumento_association_post',
     		'rest_controller_class' => 'WP_REST_Posts_Controller'
 		);
     	register_post_type( 'kumento_asso_post', $args );
@@ -412,9 +411,9 @@ class Kumento_Content_Post_Types {
 	public function register_kumento_association_taxnonomy() {
 		
 		$labels = array(
-			'name'                       => __( 'Categories', 'kumento_content' ),
-			'singular_name'              => __( 'Categories', 'kumento_content' ),
-			'menu_name'                  => __( 'Categories', 'kumento_content' ),
+			'name'                       => __( 'Association Categories', 'kumento_content' ),
+			'singular_name'              => __( 'Association Categories', 'kumento_content' ),
+			'menu_name'                  => __( 'Association Categories', 'kumento_content' ),
 			'all_items'                  => __( 'All Categories', 'kumento_content' ),
 			'parent_item'                => __( 'Parent Category', 'kumento_content' ),
 			'parent_item_colon'          => __( 'Parent Category:', 'kumento_content' ),
@@ -441,8 +440,9 @@ class Kumento_Content_Post_Types {
 			'show_admin_column'         => true,
 			'show_in_nav_menus'         => true,
 			'show_in_rest'             	=> true,
-			'rest_base'             => 'kumento_association_category',
-    		'rest_controller_class' => 'WP_REST_Terms_Controller'
+			'rewrite'            		=> array( 'slug' => 'k_asso_cat' ),
+			'rest_base'             	=> 'kumento_association_category',
+    		'rest_controller_class' 	=> 'WP_REST_Terms_Controller'
 		  );
 		  register_taxonomy( 'kumento_asso_category', array( 'kumento_asso_post' ), $args );
 

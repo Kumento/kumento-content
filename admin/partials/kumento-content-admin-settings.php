@@ -120,6 +120,9 @@ class WP_Kumento_Content_Plugin_Settings {
 			return;
 		}
 
+		$siteURL = get_site_url();
+		$kumentoOptions = get_option('kumento_content_options');
+
 		// add error/update messages
 
 		// check if the user have submitted the settings
@@ -147,23 +150,42 @@ class WP_Kumento_Content_Plugin_Settings {
 				?>
 			</form>
 		</div>
-		<div>
-			Test Display: <br />
-			<pre>
+		<div class="wrap">
+			<h2><?php echo esc_html( __( 'Endpoints', 'kumento-content' ) ); ?></h2>
 			<?php 
-				$kumentoOptions = get_option('kumento_content_options');
-				print_r($kumentoOptions); 
+			if($kumentoOptions['kumento_news_show']){
+				echo '<h3>'.esc_html( __( 'Kumento News', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_news_post</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_news_category</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_press_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Press', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_press_post</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_press_category</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_company_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Company', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_company_post</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_company_category</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_event_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Event', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_event_post</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_event_category</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_association_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Association', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_asso_post</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_asso_category</code></pre>';
+			}
 			?>
-			</pre>
-			kumento_news_show: <?php print_r($kumentoOptions['kumento_news_show']); ?>
-			<br /><br />
-			kumento_press_show: <?php print_r($kumentoOptions['kumento_press_show']); ?>
-			<br /><br />
-			kumento_company_show: <?php print_r($kumentoOptions['kumento_company_show']); ?>
-			<br /><br />
-			kumento_event_show: <?php print_r($kumentoOptions['kumento_event_show']); ?>
-			<br /><br />
-			kumento_association_show: <?php print_r($kumentoOptions['kumento_association_show']); ?>
+		</div>
+		<div class="wrap">
+			<h2><?php echo esc_html( __( 'Shortcodes', 'kumento-content' ) ); ?></h2>
 		</div>
 		<?php
 	}
