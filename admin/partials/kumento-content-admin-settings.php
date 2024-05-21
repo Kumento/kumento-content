@@ -179,8 +179,8 @@ class WP_Kumento_Content_Plugin_Settings {
 
 			if($kumentoOptions['kumento_association_show']){
 				echo '<h3>'.esc_html( __( 'Kumento Association', 'kumento-content' ) ).'</h3>';
-				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_asso_post</code></pre>';
-				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_asso_category</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_association_post</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_association_category</code></pre>';
 			}
 			?>
 		</div>
