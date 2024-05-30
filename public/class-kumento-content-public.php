@@ -74,7 +74,6 @@ class Kumento_Content_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/kumento-content-public.css', array(), $this->version, 'all' );
-
 	}
 
 	/**
@@ -99,12 +98,4 @@ class Kumento_Content_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/kumento-content-public.js', array( 'jquery' ), $this->version, false );
 
 	}
-
-	public function register_shortcodes() {
-		add_shortcode( 'kumento_post', array( $this, 'kumento_post_shortcode_function') );
-	}
-
-	public function kumento_post_shortcode_function(){
-        echo 'Kumento Posts';
-    }
 }

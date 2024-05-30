@@ -36,6 +36,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'KUMENTO_CONTENT_VERSION', '1.0.0' );
+define( 'KUMENTO_CONTENT_PATH', __DIR__ );
+define( 'KUMENTO_CONTENT_FILE', __FILE__ );
+define( 'KUMENTO_CONTENT_URL', plugin_dir_url(__FILE__) );
 
 /**
  * The code that runs during plugin activation.

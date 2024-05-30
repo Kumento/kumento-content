@@ -127,6 +127,11 @@ class Kumento_Content {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-kumento-content-post_types.php';
 
+		/**
+		 * Shortcode
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-kumento-content-shortcode.php';
+
 		$this->loader = new Kumento_Content_Loader();
 
 	}
@@ -204,7 +209,9 @@ class Kumento_Content {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
+
+		$plugin_shortcode = new Kumento_Content_Shortcode();
+		$this->loader->add_action( 'init', $plugin_shortcode, 'register_shortcodes' );
 
 	}
 
