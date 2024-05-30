@@ -74,6 +74,7 @@ class Kumento_Content_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/kumento-content-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'kumento_posts', KUMENTO_CONTENT_URL . 'assets/index.css', array(), $this->version, 'all' );
 	}
 
 	/**

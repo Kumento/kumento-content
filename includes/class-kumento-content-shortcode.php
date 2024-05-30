@@ -34,7 +34,7 @@ class Kumento_Content_Shortcode {
 			'sourceUrl' => 'https://test.kumento.org',
 			'type' => 'kumento_news_post',
 			'layout' => '',
-			'showSidebar' => false,
+			'showSidebar' => 'false',
 			'category' => '',
 		), $atts );
 		?>

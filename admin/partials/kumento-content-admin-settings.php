@@ -187,6 +187,39 @@ class WP_Kumento_Content_Plugin_Settings {
 		</div>
 		<div class="wrap">
 			<h2><?php echo esc_html( __( 'Shortcodes', 'kumento-content' ) ); ?></h2>
+			<ul>
+				<li><?php echo esc_html( __( 'sourceUrl: Site to pull the endpoint from. Required.', 'kumento-content' ) ); ?></li>
+				<li><?php echo esc_html( __( 'type: The post-type used in the endpoint. Required', 'kumento-content' ) ); ?></li>
+				<li><?php echo esc_html( __( 'layout: Display layouts. Optional.', 'kumento-content' ) ); ?></li>
+				<li><?php echo esc_html( __( 'showSidebar: Kategory filter sidebar. Optional.', 'kumento-content' ) ); ?></li>
+				<li><?php echo esc_html( __( 'category: Category number, used to filter posts by a category. Optional.', 'kumento-content' ) ); ?></li>
+			</ul>
+			<?php 
+			if($kumentoOptions['kumento_news_show']){
+				echo '<h3>'.esc_html( __( 'Kumento News', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_news_post" layout="" showSidebar="false" category=""]</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_press_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Press', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_press_show" layout="" showSidebar="false" category=""]</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_company_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Company', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_company_show" layout="" showSidebar="false" category=""]</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_event_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Event', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_event_show" layout="" showSidebar="false" category=""]</code></pre>';
+			}
+
+			if($kumentoOptions['kumento_association_show']){
+				echo '<h3>'.esc_html( __( 'Kumento Association', 'kumento-content' ) ).'</h3>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_association_show" layout="" showSidebar="false" category=""]</code></pre>';
+			}
+			?>
 		</div>
 		<?php
 	}
