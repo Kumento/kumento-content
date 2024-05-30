@@ -58,6 +58,7 @@ class WP_Kumento_Content_Plugin_Settings {
 	function __construct() {
 		add_action( 'admin_init', [$this, 'settings_init'] );
 		add_action( 'admin_menu', [$this, 'options_page'] );
+		add_action( 'rest_api_init', [$this, 'register_rest_images'] );
 	}
 
 	/**
@@ -377,6 +378,23 @@ class WP_Kumento_Content_Plugin_Settings {
 		<?php
 	}
 
+	public function register_rest_images(){
+		register_rest_field( array('post','kumento_news_post','kumento_press_post','kumento_company_post','kumento_event_post','kumento_association_post'),
+			'fimg_url',
+			array(
+				'get_callback'    => [ $this, 'get_rest_featured_image' ],
+				'update_callback' => null,
+				'schema'          => null,
+			)
+		);
+	}
+	public function get_rest_featured_image( $object, $field_name, $request ) {
+		if( $object['featured_media'] ){
+			$img = wp_get_attachment_image_src( $object['featured_media'], 'app-thumb' );
+			return $img[0];
+		}
+		return false;
+	}
 }
 
 new WP_Kumento_Content_Plugin_Settings();

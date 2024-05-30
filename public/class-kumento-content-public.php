@@ -100,4 +100,11 @@ class Kumento_Content_Public {
 
 	}
 
+	public function register_shortcodes() {
+		add_shortcode( 'kumento_post', array( $this, 'kumento_post_shortcode_function') );
+	}
+
+	public function kumento_post_shortcode_function(){
+        echo 'Kumento Posts';
+    }
 }
