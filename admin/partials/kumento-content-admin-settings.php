@@ -180,8 +180,8 @@ class WP_Kumento_Content_Plugin_Settings {
 
 			if($kumentoOptions['kumento_association_show']){
 				echo '<h3>'.esc_html( __( 'Kumento Association', 'kumento-content' ) ).'</h3>';
-				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_association_post</code></pre>';
-				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_association_category</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_asso_post</code></pre>';
+				echo '<pre><code>'.$siteURL.'/wp-json/wp/v2/kumento_asso_category</code></pre>';
 			}
 			?>
 		</div>
@@ -202,22 +202,22 @@ class WP_Kumento_Content_Plugin_Settings {
 
 			if($kumentoOptions['kumento_press_show']){
 				echo '<h3>'.esc_html( __( 'Kumento Press', 'kumento-content' ) ).'</h3>';
-				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_press_show" layout="" showSidebar="false" category=""]</code></pre>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_press_post" layout="" showSidebar="false" category=""]</code></pre>';
 			}
 
 			if($kumentoOptions['kumento_company_show']){
 				echo '<h3>'.esc_html( __( 'Kumento Company', 'kumento-content' ) ).'</h3>';
-				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_company_show" layout="" showSidebar="false" category=""]</code></pre>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_company_post" layout="" showSidebar="false" category=""]</code></pre>';
 			}
 
 			if($kumentoOptions['kumento_event_show']){
 				echo '<h3>'.esc_html( __( 'Kumento Event', 'kumento-content' ) ).'</h3>';
-				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_event_show" layout="" showSidebar="false" category=""]</code></pre>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_event_post" layout="" showSidebar="false" category=""]</code></pre>';
 			}
 
 			if($kumentoOptions['kumento_association_show']){
 				echo '<h3>'.esc_html( __( 'Kumento Association', 'kumento-content' ) ).'</h3>';
-				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_association_show" layout="" showSidebar="false" category=""]</code></pre>';
+				echo '<pre><code>[kumento_post sourceUrl="'.$siteURL.'" type="kumento_asso_post" layout="" showSidebar="false" category=""]</code></pre>';
 			}
 			?>
 		</div>
@@ -412,7 +412,7 @@ class WP_Kumento_Content_Plugin_Settings {
 	}
 
 	public function register_rest_images(){
-		register_rest_field( array('post','kumento_news_post','kumento_press_post','kumento_company_post','kumento_event_post','kumento_association_post'),
+		register_rest_field( array('post','kumento_news_post','kumento_press_post','kumento_company_post','kumento_event_post','kumento_asso_post'),
 			'fimg_url',
 			array(
 				'get_callback'    => [ $this, 'get_rest_featured_image' ],

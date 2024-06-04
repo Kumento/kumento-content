@@ -402,7 +402,7 @@ class Kumento_Content_Post_Types {
 			// as pointed out by iEmanuele, adding map_meta_cap will map the meta correctly 
 			'map_meta_cap' 			=> true,
 			'show_in_rest' 			=> true,
-			'rest_base'          	=> 'kumento_association_post',
+			'rest_base'          	=> 'kumento_asso_post',
     		'rest_controller_class' => 'WP_REST_Posts_Controller'
 		);
     	register_post_type( 'kumento_asso_post', $args );
@@ -441,7 +441,7 @@ class Kumento_Content_Post_Types {
 			'show_in_nav_menus'         => true,
 			'show_in_rest'             	=> true,
 			'rewrite'            		=> array( 'slug' => 'k_asso_cat' ),
-			'rest_base'             	=> 'kumento_association_category',
+			'rest_base'             	=> 'kumento_asso_category',
     		'rest_controller_class' 	=> 'WP_REST_Terms_Controller'
 		  );
 		  register_taxonomy( 'kumento_asso_category', array( 'kumento_asso_post' ), $args );

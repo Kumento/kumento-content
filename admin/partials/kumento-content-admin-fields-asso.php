@@ -21,7 +21,7 @@ class Kumento_Asso_Meta_Box {
 	 * @var array $display_locations The list of locations where this meta box should be displayed.
 	 */
 	private $display_locations = [
-		'kumento_association_post'
+		'kumento_asso_post'
 	];
 	
 	/**
